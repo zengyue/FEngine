@@ -22,13 +22,13 @@
   "devDependencies": {
     "@antv/f-test-utils": "^0.0.3"
   },
-  "homepage": "https://github.com/antvis/FEngine",
+  "homepage": "https://github.com/zengyue/FEngine",
   "author": "https://github.com/orgs/antvis/people",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antvis/FEngine"
+    "url": "https://github.com/zengyue/FEngine"
   },
   "bugs": {
-    "url": "https://github.com/antvis/FEngine/issues"
+    "url": "https://github.com/zengyue/FEngine/issues"
   }
 }
