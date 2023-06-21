@@ -56,6 +56,7 @@
     "lint": "eslint ./",
     "lint-fix": "eslint --fix ./",
     "publish": "lerna publish",
+    "release": "lerna exec --concurrency 1 -- npx --no-install semantic-release",
     "ci": "npm run lint && npm run build && npm run test",
     "refresh": "lerna clean && yarn && lerna bootstrap",
     "prettier": "prettier --write './packages/**/*.{ts,tsx}'"
