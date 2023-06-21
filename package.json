@@ -6,14 +6,14 @@
   ],
   "description": "",
   "keywords": [],
-  "homepage": "https://github.com/antvis/FEngine",
-  "author": "https://github.com/orgs/antvis/people",
+  "homepage": "https://github.com/zengyue/FEngine",
+  "author": "https://github.com/orgs/zengyue/people",
   "repository": {
     "type": "git",
-    "url": "https://github.com/antvis/FEngine"
+    "url": "https://github.com/zengyue/FEngine"
   },
   "bugs": {
-    "url": "https://github.com/antvis/FEngine/issues"
+    "url": "https://github.com/zengyue/FEngine/issues"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-static-block": "^7.17.6",
