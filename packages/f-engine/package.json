@@ -1,5 +1,5 @@
 {
-  "name": "@antv/f-engine",
+  "name": "@suoqiu/f-engine",
   "version": "0.0.46",
   "main": "lib/index.js",
   "module": "es/index.js",
