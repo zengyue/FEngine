@@ -1,4 +1,4 @@
-import { Canvas } from '@antv/f-engine';
+import { Canvas } from '@suoqiu/f-engine';
 import { createCanvas, CanvasProps } from './createCanvas';
 
 export { createCanvas, CanvasProps };

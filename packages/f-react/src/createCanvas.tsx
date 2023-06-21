@@ -1,6 +1,6 @@
 import React, { RefObject, createRef, Component } from 'react';
 // 对 f-engine 只有类型引用
-import { Canvas, CanvasProps as FCanvasProps, Children } from '@antv/f-engine';
+import { Canvas, CanvasProps as FCanvasProps, Children } from '@suoqiu/f-engine';
 
 export interface CanvasProps {
   className?: string;
