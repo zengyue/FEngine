@@ -51,7 +51,7 @@
     "snapshot": "jest --updateSnapshot",
     "lint": "eslint ./",
     "lint-fix": "eslint --fix ./",
-    "lerna": "lerna version patch",
+    "lerna": "lerna version patch --yes",
     "publish": "lerna publish",
     "release": "node ./scripts/semanticRelease.js --input-type=module",
     "ci": "npm run lint && npm run build && npm run test",
