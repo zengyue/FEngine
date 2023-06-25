@@ -51,6 +51,7 @@
     "snapshot": "jest --updateSnapshot",
     "lint": "eslint ./",
     "lint-fix": "eslint --fix ./",
+    "lerna": "lerna",
     "publish": "lerna publish",
     "release": "semantic-release",
     "ci": "npm run lint && npm run build && npm run test",
