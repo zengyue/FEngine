@@ -17,14 +17,6 @@ module.exports = {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    '@semantic-release/npm',
-    [
-      '@semantic-release/git',
-      {
-        message: 'chore(release): 🤖 ${nextRelease.gitTag} [skip ci]',
-      },
-    ],
-    '@semantic-release/github',
   ],
   preset: 'angular',
 };
