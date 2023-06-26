@@ -7,8 +7,6 @@ on:
 jobs:
   release:
     runs-on: macos-latest
-    # 以 chore(release): 开头才触发
-    if: "!contains(github.event.head_commit.message, '[skip ci]') && startsWith(github.event.head_commit.message , 'chore(release):')"
 
     steps:
       - uses: actions/checkout@v3
@@ -29,5 +27,5 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SUOQIU_GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: npm run publish
