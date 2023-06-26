@@ -1,7 +1,11 @@
 (async function() {
   const semanticRelease = await import('semantic-release');
 
-  const result = await semanticRelease.default();
+  const result = await semanticRelease.default({
+    tagFormat: '${LERNA_PACKAGE_NAME}-v\\${version}',
+  });
+
+  console.log(result);
 
   if (result) {
     const { lastRelease, commits, nextRelease, releases } = result;
