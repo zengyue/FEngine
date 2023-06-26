@@ -11,8 +11,7 @@
       "commitHooks": false,
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "🤖 publish",
-      "verifyAccess": false
+      "message": "🤖 publish"
     }
   }
 }
