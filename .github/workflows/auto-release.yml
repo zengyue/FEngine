@@ -5,86 +5,30 @@ on:
       - master
 
 jobs:
-  release:
-    runs-on: macos-latest
-
+  dump_contexts_to_log:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      # 发布开始通知
-      # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
-      - name: Release start notify
-        uses: zcong1993/actions-ding@master
-        with:
-          dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          secret: ${{ secrets.DING_TALK_SECRET }}
-          ignoreError: true
-          body: |
-            {
-              "msgtype": "link",
-              "link": {
-                "title": "🚑 开始自动发布 🚑",
-                "text": "🔗 请点击链接查看详情",
-                "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*gt5-RZDjt3IAAAAAAAAAAAAADmJ7AQ/original"
-              }
-            }
-
-      - name: Install dependencies
-        run: yarn
-
-      - name: Prepare
-        # https://github.com/lerna/lerna/issues/2404
-        # https://github.com/lerna/lerna/issues/2788
-        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+      - name: Dump GitHub context
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Release
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo '$GITHUB_CONTEXT'
+      - name: Dump job context
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm run publish
-
-      # 发布失败通知内部开发群
-      - name: Release failed notify
-        if: ${{ failure() }}
-        uses: zcong1993/actions-ding@master
-        with:
-          dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          secret: ${{ secrets.DING_TALK_SECRET }}
-          ignoreError: true
-          body: |
-            {
-              "msgtype": "link",
-              "link": {
-                "title": "😳😳😳 发布失败",
-                "text": "🔗 请点击链接查看具体原因, 及时修复, 尝试点击右上角 [Re-run all jobs] 重试, 或手动发布 🚑",
-                "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
-              }
-            }
-
-        # 发布成功通知内部开发群
-      - name: Release success notify
-        if: ${{ success() }}
-        uses: zcong1993/actions-ding@master
-        with:
-          dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          secret: ${{ secrets.DING_TALK_SECRET }}
-          ignoreError: true
-          body: |
-            {
-              "msgtype": "link",
-              "link": {
-                "title": "👏👏👏 发布成功",
-                "text": "🔗 点开查看版本号 🚑",
-                "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
-              }
-            }
+          JOB_CONTEXT: ${{ toJson(job) }}
+        run: echo '$JOB_CONTEXT'
+      - name: Dump steps context
+        env:
+          STEPS_CONTEXT: ${{ toJson(steps) }}
+        run: echo '$STEPS_CONTEXT'
+      - name: Dump runner context
+        env:
+          RUNNER_CONTEXT: ${{ toJson(runner) }}
+        run: echo '$RUNNER_CONTEXT'
+      - name: Dump strategy context
+        env:
+          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
+        run: echo '$STRATEGY_CONTEXT'
+      - name: Dump matrix context
+        env:
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
+        run: echo '$MATRIX_CONTEXT'
