@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.6](https://github.com/zengyue/FEngine/compare/@suoqiu/f-engine@1.3.5...@suoqiu/f-engine@1.3.6) (2023-06-26)
+
+
+### Bug Fixes
+
+* **action:** 完善 auto release ([da56376](https://github.com/zengyue/FEngine/commit/da5637664799719fe02c45f4e4cbbb6d561a3188))
+
+
+
+
+
 ## 1.3.5 (2023-06-26)
 
 **Note:** Version bump only for package @suoqiu/f-engine
