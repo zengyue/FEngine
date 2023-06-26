@@ -17,6 +17,7 @@ jobs:
           node-version: 18
 
       # 发布开始通知
+      # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
       - name: Release start notify
         uses: zcong1993/actions-ding@master
         with:
@@ -28,7 +29,7 @@ jobs:
               "link": {
                 "title": "🚑 开始自动发布 🚑",
                 "text": "🔗 请点击链接查看详情",
-                "messageUrl": "${{ steps.step_id.outputs.url_output }}",
+                "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs/${{ github.job }}",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*gt5-RZDjt3IAAAAAAAAAAAAADmJ7AQ/original"
               }
             }
