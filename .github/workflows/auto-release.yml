@@ -22,6 +22,7 @@ jobs:
         uses: zcong1993/actions-ding@master
         with:
           dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
+          secret: ${{ secrets.DING_TALK_SECRET }}
           ignoreError: true
           body: |
             {
