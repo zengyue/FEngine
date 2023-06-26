@@ -16,6 +16,23 @@ jobs:
         with:
           node-version: 18
 
+      # 发布开始通知
+      - name: Release start notify
+        uses: zcong1993/actions-ding@master
+        with:
+          dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
+          ignoreError: true
+          body: |
+            {
+              "msgtype": "link",
+              "link": {
+                "title": "🚑 开始自动发布 🚑",
+                "text": "🔗 请点击链接查看详情",
+                "messageUrl": "${{ steps.step_id.outputs.url_output }}",
+                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*gt5-RZDjt3IAAAAAAAAAAAAADmJ7AQ/original"
+              }
+            }
+
       - name: Install dependencies
         run: yarn
 
