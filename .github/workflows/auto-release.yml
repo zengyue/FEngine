@@ -88,7 +88,7 @@ jobs:
               "link": {
                 "title": "👏👏👏 发布成功",
                 "text": "$(cat lerna-publish-summary.json)",
-                "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                "messageUrl": "https://github.com/antvis/FEngine/releases",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
               }
             }
