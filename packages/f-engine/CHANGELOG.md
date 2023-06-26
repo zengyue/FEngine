@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.14](https://github.com/zengyue/FEngine/compare/@suoqiu/f-engine@1.0.13...@suoqiu/f-engine@1.0.14) (2023-06-26)
+
+
+### Bug Fixes
+
+* **f-engine:** fix ignorea ([eb97c60](https://github.com/zengyue/FEngine/commit/eb97c6062bb9992d286bf8324a8c4c654bf7e554))
+
+
+
+
+
 ## [1.0.13](https://github.com/zengyue/FEngine/compare/@suoqiu/f-engine@1.0.12...@suoqiu/f-engine@1.0.13) (2023-06-26)
 
 
