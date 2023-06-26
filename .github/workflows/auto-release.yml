@@ -53,7 +53,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: npm run publish
+        run: npm run release
 
       # 发布失败通知内部开发群
       - name: Release failed notify
@@ -87,7 +87,7 @@ jobs:
               "msgtype": "link",
               "link": {
                 "title": "👏👏👏 发布成功",
-                "text": "🔗 点开查看版本号 🚑",
+                "text": "$(cat lerna-publish-summary.json)",
                 "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
               }
