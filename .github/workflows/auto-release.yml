@@ -59,7 +59,7 @@ jobs:
         name: summary
         run: |
           JSON=$(cat ./lerna-publish-summary.json)
-          echo "::set-output name=summary_JSON::$JSON"
+          echo "summary_JSON=$JSON" >> $GITHUB_OUTPUT
 
       # 发布失败通知内部开发群
       - name: Release failed notify
@@ -93,7 +93,7 @@ jobs:
               "msgtype": "link",
               "link": {
                 "title": "👏👏👏 发布成功",
-                "text": ${{ toJSON(steps.summary.outputs.summary_JSON) }},
+                "text": ${{ toJSON(fromJSON(steps.summary.outputs.summary_JSON)) }},
                 "messageUrl": "https://github.com/antvis/FEngine/releases",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
               }
