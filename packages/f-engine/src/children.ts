@@ -16,7 +16,7 @@ function map<T = any>(children: T | T[] | null, fn: (child: T | null) => any) {
   if (!children) {
     return fn(children as null);
   }
-  //b
+  //bc
   if (isArray(children)) {
     return children.map((child) => {
       return map(child, fn);
