@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.2.0 (2023-06-26)
+
+
+### Features
+
+* **f-engine:** auto release ([b3b2098](https://github.com/zengyue/FEngine/commit/b3b20986c7494fb1c051aa1f98f59de5c2675bfa))
+
+
+
+
+
 # [1.1.0](https://github.com/zengyue/FEngine/compare/@suoqiu/f-react@1.0.13...@suoqiu/f-react@1.1.0) (2023-06-26)
 
 
