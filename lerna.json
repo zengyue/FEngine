@@ -7,13 +7,12 @@
       "ci": false,
       "npmClientArgs": ["--no-package-lock"]
     },
-    "version": {
+    "publish": {
+      "commitHooks": false,
       "conventionalCommits": true,
       "createRelease": "github",
-      "message": "🤖 publish %s"
-    },
-    "publish": {
-      "commitHooks": false
+      "message": "🤖 publish %s",
+      "verifyAccess": false
     }
   }
 }

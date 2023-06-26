@@ -3,7 +3,7 @@ import { Renderer as CanvasRenderer } from '@antv/g-mobile-canvas';
 import * as Smooth from './shape/util/smooth';
 
 export { JSX } from './jsx/jsx-namespace';
-// export createElement 别名
+// export createElement 别名a
 export { jsx as createElement, Fragment, jsx } from './jsx';
 export { registerTag } from './jsx/tag';
 export { default as Canvas, CanvasProps } from './canvas';
