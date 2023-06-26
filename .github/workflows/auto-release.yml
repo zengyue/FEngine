@@ -7,7 +7,7 @@ on:
 jobs:
   release:
     runs-on: macos-latest
-    if: "startsWith(github.event.head_commit.message , 'chore(release):')"
+    if: startsWith(github.event.head_commit.message , 'chore(release):')
 
     steps:
       - uses: actions/checkout@v3
@@ -55,6 +55,12 @@ jobs:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
         run: npm run release
 
+      - id: summary
+        name: summary
+        run: |
+          JSON=$(cat ./lerna-publish-summary.json)
+          echo "::set-output name=summary_JSON::$JSON"
+
       # 发布失败通知内部开发群
       - name: Release failed notify
         if: ${{ failure() }}
@@ -87,7 +93,7 @@ jobs:
               "msgtype": "link",
               "link": {
                 "title": "👏👏👏 发布成功",
-                "text": "$(cat lerna-publish-summary.json)",
+                "text": ${{ toJSON(steps.summary.outputs.summary_JSON) }},
                 "messageUrl": "https://github.com/antvis/FEngine/releases",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
               }
