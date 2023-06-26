@@ -7,7 +7,7 @@ type playState = 'play' | 'pause' | 'finish';
 
 export interface PlayerProps {
   /**
-   * 时间帧
+   * 时间帧a
    */
   frame?: number;
   /**

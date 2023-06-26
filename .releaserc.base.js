@@ -1,5 +1,6 @@
 module.exports = {
   extends: 'semantic-release-monorepo',
+  dryRun: true,
   plugins: [
     [
       '@semantic-release/commit-analyzer',
@@ -15,8 +16,7 @@ module.exports = {
         ],
       },
     ],
-    '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
+    `${__dirname}/scripts/semantic-release-plugin.js`,
   ],
   preset: 'angular',
 };
