@@ -72,12 +72,6 @@ jobs:
               }
             }
 
-        # 发布成功
-      - name: Sleep for 30 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '30s'
-
       - name: Release success notify
         if: ${{ success() }}
         uses: visiky/dingtalk-release-notify@main
