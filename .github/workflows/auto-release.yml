@@ -93,7 +93,7 @@ jobs:
               "msgtype": "link",
               "link": {
                 "title": "👏👏👏 发布成功",
-                "text": ${{ toJSON(fromJSON(steps.summary.outputs.summary_JSON)) }},
+                "text": ${{ steps.summary.outputs.summary_JSON }},
                 "messageUrl": "https://github.com/antvis/FEngine/releases",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
               }
