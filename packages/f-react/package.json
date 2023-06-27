@@ -1,6 +1,6 @@
 {
   "name": "@suoqiu/f-react",
-  "version": "1.4.0-beta.1",
+  "version": "1.4.0",
   "description": "FEngine for React",
   "main": "lib/index.js",
   "module": "es/index.js",
