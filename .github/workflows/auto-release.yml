@@ -31,7 +31,7 @@ jobs:
                 "title": "🚀 FEngine 开始发布",
                 "text": "🔗 查看详情",
                 "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*gt5-RZDjt3IAAAAAAAAAAAAADmJ7AQ/original"
+                "picUrl": "https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/ea88c724-38fb-42aa-8055-0e08155368b9.png"
               }
             }
 
@@ -68,7 +68,7 @@ jobs:
                 "title": "😳😳😳 FEngine 发布失败",
                 "text": "🔗 请点击链接查看具体原因, 及时修复, 尝试点击右上角 [Re-run all jobs] 重试, 或手动发布",
                 "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
+                "picUrl": "https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/ea88c724-38fb-42aa-8055-0e08155368b9.png"
               }
             }
 
@@ -79,7 +79,7 @@ jobs:
         with:
           DING_TALK_TOKEN: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
           notify_title: '🎉 FEngine 新版本发布啦 🎉'
-          notify_body: '## { title } <hr /> ![preview](https://gw.alipayobjects.com/zos/antfincdn/ISzgBCtgR/2c5c4aaa-4f40-46f7-8f6b-427fa9ff07bb.png) <hr /> 看看有哪些更新吧 <hr />'
+          notify_body: '## { title } <hr /> ![preview](https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/c833f8c9-c629-4943-a09b-ce1bf17ca937.png) <hr /> 看看有哪些更新吧 <hr />'
           notify_footer: '> 前往 [**AntV/FEngine Releases**](https://github.com/antvis/FEngine/releases) 查看完整更新日志.'
           at_all: false
           enable_prerelease: false
