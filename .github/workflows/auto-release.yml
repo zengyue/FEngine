@@ -78,7 +78,7 @@ jobs:
         with:
           DING_TALK_TOKEN: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
           notify_title: '🎉 FEngine 新版本发布啦 🎉'
-          notify_body: '## { title } <hr /> ![preview](https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/c833f8c9-c629-4943-a09b-ce1bf17ca937.png) <hr /> 看看有哪些更新吧 <hr />'
-          notify_footer: '> 前往 [**AntV/FEngine Releases**](https://github.com/antvis/FEngine/releases) 查看完整更新日志.'
+          notify_body: '## { title } <hr /> ![preview](https://gw.alipayobjects.com/zos/finxbff/compress-tinypng/c833f8c9-c629-4943-a09b-ce1bf17ca937.png) <hr /> { body } <hr />'
+          notify_footer: '> 前往 [**AntV/FEngine Releases**]({ release_url })查看完整更新日志.'
           at_all: false
           enable_prerelease: false
