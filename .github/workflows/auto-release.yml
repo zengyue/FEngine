@@ -23,14 +23,13 @@ jobs:
         uses: zcong1993/actions-ding@master
         with:
           dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          secret: ${{ secrets.DING_TALK_SECRET }}
           ignoreError: true
           body: |
             {
               "msgtype": "link",
               "link": {
-                "title": "🚑 开始自动发布 🚑",
-                "text": "🔗 请点击链接查看详情",
+                "title": "🚑 FEngine 开始发布 🚑",
+                "text": "🔗 查看详情",
                 "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*gt5-RZDjt3IAAAAAAAAAAAAADmJ7AQ/original"
               }
@@ -55,46 +54,20 @@ jobs:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
         run: npm run release
 
-      - id: summary
-        name: summary
-        run: |
-          JSON=$(cat ./lerna-publish-summary.json)
-          echo "summary_JSON=$JSON" >> $GITHUB_OUTPUT
-
       # 发布失败通知内部开发群
       - name: Release failed notify
         if: ${{ failure() }}
         uses: zcong1993/actions-ding@master
         with:
           dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          secret: ${{ secrets.DING_TALK_SECRET }}
           ignoreError: true
           body: |
             {
               "msgtype": "link",
               "link": {
-                "title": "😳😳😳 发布失败",
+                "title": "😳😳😳 FEngine 发布失败",
                 "text": "🔗 请点击链接查看具体原因, 及时修复, 尝试点击右上角 [Re-run all jobs] 重试, 或手动发布 🚑",
                 "messageUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
-                "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
-              }
-            }
-
-        # 发布成功通知内部开发群
-      - name: Release success notify
-        if: ${{ success() }}
-        uses: zcong1993/actions-ding@master
-        with:
-          dingToken: ${{ secrets.DING_TALK_ACCESS_TOKEN }}
-          secret: ${{ secrets.DING_TALK_SECRET }}
-          ignoreError: true
-          body: |
-            {
-              "msgtype": "link",
-              "link": {
-                "title": "👏👏👏 发布成功",
-                "text": ${{ steps.summary.outputs.summary_JSON }},
-                "messageUrl": "https://github.com/antvis/FEngine/releases",
                 "picUrl": "https://mdn.alipayobjects.com/huamei_qa8qxu/afts/img/A*PRSkSqsE_vYAAAAAAAAAAAAADmJ7AQ/original"
               }
             }
