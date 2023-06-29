@@ -38,6 +38,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Git Config
+        run: git config --local user.name zengyue
+
       # - name: ci
       #   run: npm run ci
 
