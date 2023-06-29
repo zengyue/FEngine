@@ -1,6 +1,6 @@
 {
   "name": "@suoqiu/f-engine",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "main": "lib/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
